@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BACHE CAR WASH - Kapsoya Eldoret</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#f8fafc}
+nav{background:#0f172a;color:white;display:flex;justify-content:space-between;align-items:center;padding:14px 30px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer;transition:all 0.3s ease}
+.logo:hover{transform:scale(1.05) translateY(-2px)}
+.logo-icon{font-size:32px;filter:drop-shadow(0 0 10px #38bdf8);transition:all 0.3s}
+.logo:hover .logo-icon{transform:rotate(15deg) scale(1.2)}
+.logo b{font-size:16px;line-height:1.1;display:block}
+.logo span{color:#38bdf8;font-size:10px;letter-spacing:2px;font-weight:700}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:14px;transition:all 0.3s;position:relative}
+.nav-links a:hover{color:#38bdf8;transform:translateY(-2px)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#38bdf8;transition:width 0.3s}
+.nav-links a:hover::after{width:100%}
+.book-btn{background:#38bdf8;color:#0f172a;padding:9px 18px;border-radius:8px;font-weight:800;text-decoration:none;font-size:13px;transition:all 0.3s;display:inline-block}
+.book-btn:hover{background:#0ea5e9;color:white;transform:translateY(-3px) scale(1.05);box-shadow:0 8px 20px rgba(56,189,248,0.4)}
+.hero{background:linear-gradient(rgba(15,23,42,0.8),rgba(15,23,42,0.6)),url(https://images.pexels.com/photos/29504457/pexels-photo-29504457.jpeg);background-size:cover;background-position:center;padding:90px 35px;color:white}
+.badge{background:#38bdf8;color:#0f172a;padding:7px 16px;border-radius:20px;font-size:12px;font-weight:900;display:inline-block;margin-bottom:18px;letter-spacing:0.5px;transition:all 0.3s}
+.badge:hover{transform:scale(1.08) rotate(-1deg);background:#0ea5e9;color:white}
+.hero h1{font-size:58px;line-height:0.95;font-weight:900;letter-spacing:-1px}
+.hero h1 .green{color:#38bdf8;display:block}
+.hero p{margin:18px 0 25px;font-size:16px;color:#e2e8f0;max-width:550px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}
+.btn{padding:12px 22px;border-radius:30px;font-weight:700;font-size:14px;cursor:pointer;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.35s ease}
+.btn-blue{background:#38bdf8;color:#0f172a}
+.btn-blue:hover{background:#0ea5e9;color:white;transform:translateY(-4px) scale(1.04);box-shadow:0 10px 25px rgba(56,189,248,0.45)}
+.btn-out{border:1.5px solid rgba(255,255,255,0.7);color:white;background:rgba(0,0,0,0.2)}
+.btn-out:hover{background:white;color:#0f172a;transform:translateY(-4px) scale(1.04);box-shadow:0 10px 25px rgba(255,255,255,0.2)}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.3);padding:8px 16px;border-radius:25px;font-size:13px;display:flex;align-items:center;gap:6px;backdrop-filter:blur(4px);transition:all 0.3s}
+.pill:hover{background:rgba(56,189,248,0.25);border-color:#38bdf8;transform:translateY(-3px)}
+#services{padding:55px 20px;text-align:center;max-width:1200px;margin:0 auto}
+#services h2{font-size:34px;color:#0f172a;font-weight:800}
+#services .sub{color:#64748b;margin:10px 0 30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border-radius:14px;padding:20px 14px;box-shadow:0 4px 18px rgba(0,0,0,0.06);border:1.5px solid #e2e8f0;cursor:pointer;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);position:relative;text-align:left}
+.card:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 20px 40px rgba(56,189,248,0.25);border-color:#38bdf8;background:#f0f9ff}
+.card .icon{font-size:32px;margin-bottom:8px;display:block;transition:all 0.4s}
+.card:hover .icon{transform:scale(1.25) rotate(5deg)}
+.card h3{font-size:15px;color:#0f172a;font-weight:700;line-height:1.2}
+.card .ksh{font-size:15px;font-weight:900;color:#0284c7;margin-top:8px}
+.card p{font-size:11px;color:#64748b;line-height:1.3;margin-top:4px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr}.hero h1{font-size:36px}.nav-links a{display:none}}
+#booking{background:#0f172a;color:white;padding:45px 20px;text-align:center}
+#booking input,#booking select{padding:12px 14px;margin:6px;border-radius:8px;border:none;width:240px;font-size:14px;transition:all 0.3s}
+#booking input:focus,#booking select:focus{outline:2px solid #38bdf8;transform:scale(1.02)}
+footer{background:#0f172a;color:white;padding:35px 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;max-width:1100px;margin:0 auto;text-align:left}
+.footer-grid h3{color:#38bdf8;font-size:15px;margin-bottom:10px}
+.footer-grid p,.footer-grid a{color:#94a3b8;font-size:13px;text-decoration:none;line-height:1.8;transition:all 0.3s;display:block}
+.footer-grid a:hover{color:#38bdf8;transform:translateX(5px)}
+.copy{border-top:1px solid #1e293b;margin-top:25px;padding-top:15px;text-align:center;color:#64748b;font-size:11px}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo" onclick="window.scrollTo(0,0)">
+<div class="logo-icon">💦🚗</div>
+<div><b>BACHE CAR WASH</b><span>KAPSOYA • ELDORET</span></div>
+</div>
+<div class="nav-links">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#services">Pricing</a><a href="#booking">Contact</a>
+<a class="book-btn" href="#booking">BOOK NOW</a>
+</div>
+</nav>
+<div class="hero" id="home">
+<div class="badge">KAPSOYA • ELDORET</div>
+<h1>Clean car.<br><span class="green">Fresh drive.</span></h1>
+<p>Quality car washing and cleaning services at Bache Car Wash</p>
+<div class="btns">
+<button class="btn btn-blue" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">📅 Book a Wash</button>
+<a class="btn btn-out" href="tel:0725820377">📞 0725 820 377</a>
+<a class="btn btn-out" href="https://wa.me/254725820377?text=Hi BACHE, I want to book a car wash" target="_blank">💬 WhatsApp</a>
+</div>
+<div class="pills">
+<span class="pill">🚗 Exterior KSh 150</span>
+<span class="pill">✅ Full KSh 200</span>
+<span class="pill">🕒 6 AM - 7 PM</span>
+</div>
+</div>
+<div id="services">
+<h2>Our Services & Prices</h2>
+<p class="sub">Affordable, reliable cleaning — choose the package that fits your car</p>
+<div class="grid">
+<div class="card" onclick="book('Body / Exterior Wash KSh 150')"><span class="icon">🚿</span><h3>Body / Exterior Wash</h3><p>Exterior vehicle wash.</p><div class="ksh">KSh 150</div></div>
+<div class="card" onclick="book('Full Wash KSh 200')"><span class="icon">✨</span><h3>Full Wash</h3><p>Full vehicle wash.</p><div class="ksh">KSh 200</div></div>
+<div class="card" onclick="book('Vacuum - Ask for price')"><span class="icon">🧹</span><h3>Vacuum</h3><p>Interior vacuum cleaning.</p><div class="ksh">Ask for price</div></div>
+<div class="card" onclick="book('Under Wash - Ask for price')"><span class="icon">🚙</span><h3>Under Wash</h3><p>Underbody cleaning.</p><div class="ksh">Ask for price</div></div>
+<div class="card" onclick="book('Carpets - Ask for price')"><span class="icon">🧶</span><h3>Carpets</h3><p>Carpet cleaning.</p><div class="ksh">Ask for price</div></div>
+<div class="card" onclick="book('Waxing - Ask for price')"><span class="icon">💧</span><h3>Waxing</h3><p>Vehicle waxing.</p><div class="ksh">Ask for price</div></div>
+<div class="card" onclick="book('Buffing - Ask for price')"><span class="icon">💎</span><h3>Buffing</h3><p>Paint-finish buffing.</p><div class="ksh">Ask for price</div></div>
+<div class="card" onclick="book('Detailing - Ask for price')"><span class="icon">🔧</span><h3>Detailing</h3><p>Detailed vehicle cleaning.</p><div class="ksh">Ask for price</div></div>
+<div class="card" onclick="book('Sofa Sets - Ask for price')"><span class="icon">🛋️</span><h3>Sofa Sets</h3><p>Sofa-set cleaning.</p><div class="ksh">Ask for price</div></div>
+</div>
+</div>
+<div id="booking">
+<h2>Book Your Wash Now</h2>
+<p style="color:#94a3b8;margin:10px">Fill form & we will WhatsApp you</p>
+<input id="name" placeholder="Your Name">
+<input id="phone" placeholder="Phone 07...">
+<select id="service"><option>Body / Exterior Wash - KSh 150</option><option>Full Wash - KSh 200</option><option>Vacuum - Ask for price</option><option>Under Wash - Ask for price</option><option>Carpets - Ask for price</option><option>Waxing - Ask for price</option><option>Buffing - Ask for price</option><option>Detailing - Ask for price</option><option>Sofa Sets - Ask for price</option></select>
+<br>
+<input type="date" id="date">
+<input type="time" id="time">
+<br><br>
+<button class="btn btn-blue" onclick="send()">✅ Confirm Booking on WhatsApp</button>
+</div>
+<footer>
+<div class="footer-grid">
+<div><h3 style="display:flex;align-items:center;gap:8px">💧 BACHE CAR WASH</h3><p>Kapsoya's trusted car wash for a clean and fresh ride.</p></div>
+<div><h3>Contact</h3><a href="tel:0725820377">📞 0725 820 377</a><a href="mailto:bachecarwash@gmail.com">✉️ bachecarwash@gmail.com</a></div>
+<div><h3>Hours & Location</h3><p>🕒 Hours: 6 AM - 7 PM Daily</p><p>📍 Kapsoya, Eldoret</p></div>
+</div>
+<div class="copy">© 2024 BACHE CAR WASH Kapsoya Eldoret. All rights reserved.</div>
+</footer>
+<script>
+function book(s){document.getElementById('service').value=s;document.getElementById('booking').scrollIntoView({behavior:'smooth'})}
+function send(){
+let n=document.getElementById('name').value,
+p=document.getElementById('phone').value,
+s=document.getElementById('service').value,
+d=document.getElementById('date').value,
+t=document.getElementById('time').value;
+if(!n||!p){alert('Enter Name & Phone');return}
+if(!d){alert('Please select Date (Month/Day)');return}
+if(!t){alert('Please select Time');return}
+let m=`Hi BACHE CAR WASH Kapsoya!%0ABooking: ${s}%0AName: ${n}%0APhone: ${p}%0ADate: ${d}%0ATime: ${t}`;
+window.open(`https://wa.me/254725820377?text=${m}`,'_blank')
+}
+</script>
+</body>
+</html>
